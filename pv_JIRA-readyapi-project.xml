@@ -1,0 +1,2809 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e49dfc50-f7fc-4dfd-a708-195619a4f898" created="2.7.0" activeEnvironment="Default environment" name="JIRA" resourceRoot="" updated="2.7.0 2019-04-30T17:12:05Z" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="5a42eea7-d8a2-431d-9755-1b4042b46766" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://phivo.atlassian.net" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+    </con:endpoints>
+    <con:environmentSpec>
+      <con:entry environmentId="Default">
+        <con:authProfile>JIRA_Authen</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+    <con:resource name="Add Comment" path="/issue/{ticket_id}/comment" id="69ee9e6d-a0f3-4496-bd37-7a9e6936df75">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>ticket_id</con:name>
+          <con:value/>
+          <con:style>TEMPLATE</con:style>
+          <con:default/>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="883a944c-4c90-4211-9982-3f90306218d4" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>application/xml;charset=UTF-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element>status</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element xmlns:ns="https://phivo.atlassian.net/rest/api/2">ns:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+          <con:status>405</con:status>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>404 400</con:status>
+          <con:params/>
+          <con:element xmlns:ns="https://phivo.atlassian.net/rest/api/2">ns:Fault</con:element>
+        </con:representation>
+        <con:request name="POST - Comment" id="811fb9ea-5239-49c0-b835-8c9eb2333cb8" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+          <con:request>{
+	"body": "comment from soapUI"
+}</con:request>
+          <con:originalUri>https://phivo.atlassian.net/rest/api/2</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters>
+            <entry key="ticket_id" value="SOAP-1" xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>ticket_id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Update Comment" path="/issue/{ticket_id}/comment/{comment_id}" id="b9fa2d4b-2061-4628-9395-9af19242c2a2">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>ticket_id</con:name>
+          <con:style>TEMPLATE</con:style>
+        </con:parameter>
+        <con:parameter>
+          <con:name>comment_id</con:name>
+          <con:style>TEMPLATE</con:style>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="cb72cced-5109-41ed-80f8-90898710523d" method="PUT">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>ticket_id</con:name>
+            <con:value/>
+            <con:style>TEMPLATE</con:style>
+            <con:default/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>400 404</con:status>
+          <con:params/>
+          <con:element xmlns:ns="https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/comment/10013">ns:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:ns="https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/comment/10013">ns:Response</con:element>
+        </con:representation>
+        <con:request name="PUT - Update Comment" id="502b95a4-b856-4777-b493-f1dad709ffa4" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+          <con:parameterOrder>
+            <con:entry>ticket_id</con:entry>
+            <con:entry>comment_id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Do Transition" path="/issue/{ticket_id}/transitions" id="47d24ab9-d143-4ae3-aa69-4e1e1f8f73ff">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter required="true">
+          <con:name>ticket_id</con:name>
+          <con:value>ticket_id</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>ticket_id</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="8abb91a0-6d7a-4bff-9659-da94d08b766b" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:tran="https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/transitions">tran:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="POST - Do Transition" id="9bacf57e-b8e1-4f11-8abc-bbaca27a1c89" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+          <con:request>{
+    "transition": {
+        "id": "21"
+    }
+}</con:request>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters>
+            <entry key="ticket_id" value="" xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Vote" path="/issue/{ticket_id}/votes" id="6f2583f6-2b32-452f-a3c5-9638b288aa1d">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter required="true">
+          <con:name>ticket_id</con:name>
+          <con:value>ticket_id</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>ticket_id</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="53ab4cdd-4baa-45ea-81a3-6edab7dcd98a" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:vot="https://phivo.atlassian.net/rest/api/2/issue/ticket_id/votes">vot:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="POST - Add Vote" id="780f51a2-187e-46a8-bceb-e135dbadd988" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/ticket_id/votes</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters>
+            <entry key="ticket_id" value="" xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Remove Vote" path="/issue/{ticket_id}/votes" id="358f63a1-33e2-48da-b24b-9f1511fbf684">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter required="true">
+          <con:name>ticket_id</con:name>
+          <con:value>ticket_id</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>ticket_id</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="22b3feaf-a555-4925-bb82-8f0a44454563" method="DELETE">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="DELETE - Remove Vote" id="4c0915ef-7f39-482b-b56a-e245db603aff" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Search" path="/search" id="0c7443b1-bd4e-4b89-a0ed-0319a20d19b1">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Method 1" id="a8073588-3fe5-4ecc-86db-ac4fbdf63fbb" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:sear="https://phivo.atlassian.net/rest/api/2/search">sear:Response</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element xmlns:sear="https://phivo.atlassian.net/rest/api/2/search">sear:Fault</con:element>
+        </con:representation>
+        <con:request name="POST - SearchJQL" id="dc00a497-6464-4f3f-a463-2b91d8eff869" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="2303a6db-4485-449f-92d0-26572fd34f54" name="Suite - Add Comment" authProfile="JIRA_Authen">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="e231329d-adb3-489f-a540-0e08b7a9b049" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Add Comment On Valid Owner Ticket" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="77fa436e-1d07-4109-912a-ae92897ef6ab">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Try comment from SoapUI</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Add Comment" id="f1b615af-b2aa-4617-8db9-4c5893f9448d">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Add Comment" id="811fb9ea-5239-49c0-b835-8c9eb2333cb8" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Add Comment Successfully" id="750cc0f8-c98d-431a-bb5b-e32d1e5b68bd">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>1d81179b-30d3-4981-bf01-c45bf2fd3601</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>f1b615af-b2aa-4617-8db9-4c5893f9448d</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="dcf3f8ea-246d-4b2d-9814-0e4609595810">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>77c8022f-7e05-44cb-8629-44804bca2766</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>f1b615af-b2aa-4617-8db9-4c5893f9448d</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="bf12a517-9d99-4452-95ff-c46ffbd07853">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#comment_text}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Property Transfer" id="cd729828-699c-4c0c-8612-d83ecad90361">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>abc</con:name>
+            <con:sourceStep>Step 1 - Add Comment</con:sourceStep>
+            <con:sourcePath/>
+            <con:targetType>global_var</con:targetType>
+            <con:targetStep>#Global#</con:targetStep>
+            <con:targetPath/>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>77fa436e-1d07-4109-912a-ae92897ef6ab</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="c362e821-6169-472f-b0ea-cc7aed6f6367" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Add Comment On Invalid Ticket" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="f298eaca-6017-4fdd-823c-3126b6639077">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Try comment from SoapUI</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>Invalid</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Add Comment" id="7cc96649-be3c-4e8d-bd80-291904602e73">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Add Comment" id="811fb9ea-5239-49c0-b835-8c9eb2333cb8" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Add Comment Un-Successful" id="ff44ec4e-4c47-49d7-a0c7-d1092805470b">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>4ac8911b-ec4b-42ea-a58f-104c1bb181ed</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>7cc96649-be3c-4e8d-bd80-291904602e73</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="d8706b2c-0b67-4816-9d1e-e7fdae6bf494">
+              <con:configuration>
+                <path>$['errorMessages'][0]</path>
+                <content>Issue does not exist or you do not have permission to see it.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>1aca196f-d14c-47a7-bd6b-d40bae9d156f</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>7cc96649-be3c-4e8d-bd80-291904602e73</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="5156a66b-59f0-4cdd-b426-8a34b04ffcc9">
+              <con:settings/>
+              <con:configuration>
+                <codes>404</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>f298eaca-6017-4fdd-823c-3126b6639077</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="6b758d0b-41aa-4048-9079-3e6d1f597924" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Try Adding Empty Comment" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="a08f762c-7d10-4d8c-b24d-7ef896948506">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value/>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Add Comment" id="25da4faa-a165-4018-8ad2-3ad99498ae56">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Add Comment" id="811fb9ea-5239-49c0-b835-8c9eb2333cb8" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Add Comment Un-Successfully" id="1aba3c97-0aea-4faa-8fab-7c9091cdba7d">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>906ecabc-fd59-4dcb-ab45-6d4f88fc86c5</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>25da4faa-a165-4018-8ad2-3ad99498ae56</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="77fef978-7375-406f-952f-859d884fc8c9">
+              <con:settings/>
+              <con:configuration>
+                <codes>400</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>93b49e3f-d8eb-4b97-9f52-8f750f783007</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>25da4faa-a165-4018-8ad2-3ad99498ae56</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="5fb52376-adfc-4583-b5de-ef99517c9e3f">
+              <con:configuration>
+                <path>$['errors']['comment']</path>
+                <content>Comment body can not be empty!</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>a08f762c-7d10-4d8c-b24d-7ef896948506</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="d69bc555-495e-48ba-bcbe-ab6cd6809c43" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Add Comment On Valid Non-Owner Ticket" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="addf6b78-3c9e-4853-91e0-9eef1979610b">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Try comment from SoapUI</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-3</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Add Comment" id="d863a9b7-27f1-43e8-8300-861c2ab1c9ba">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Add Comment" id="811fb9ea-5239-49c0-b835-8c9eb2333cb8" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Add Comment Successfully" id="9c89c990-f5f3-476b-b48e-a5cadf401e84">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>5031a109-efe4-4f24-964e-653480134f96</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>d863a9b7-27f1-43e8-8300-861c2ab1c9ba</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="0507fdf3-b96b-4b08-8332-8bb5db35538e">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>30016096-b1b8-4458-a1ba-3dec056c02e5</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>d863a9b7-27f1-43e8-8300-861c2ab1c9ba</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="32ce6d48-dfc8-4e6d-b84e-7bac8aae7e4c">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#comment_text}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>addf6b78-3c9e-4853-91e0-9eef1979610b</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="13ccff0d-9d8c-404f-9741-8462f5b302d0" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Add Comment With Special Characters" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="25e32126-48ba-44bf-8e64-daac1d662743">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>@#$%^</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Add Comment" id="c7725e30-b593-467e-917d-fb28afd1fa0c">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Add Comment" id="811fb9ea-5239-49c0-b835-8c9eb2333cb8" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Add Comment Successfully" id="766c114d-9b64-45d2-b384-d1a37025de74">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>c270d7fd-3c38-4307-a91f-f07ce1c48cc9</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>c7725e30-b593-467e-917d-fb28afd1fa0c</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="e3cca31a-f79b-4c6c-af52-d51d4f43c516">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>6869ff3a-fb93-40c1-a0d7-0a6dbe35503a</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>c7725e30-b593-467e-917d-fb28afd1fa0c</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="ba264cd2-e3ae-460a-80fd-35ea32201718">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#comment_text}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>25e32126-48ba-44bf-8e64-daac1d662743</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties>
+      <con:property>
+        <con:name>suite property</con:name>
+        <con:value/>
+      </con:property>
+    </con:properties>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:testSuite id="c205f6a0-b52e-46e5-a7ce-7bf572cb72de" name="Suite - Update Comment" authProfile="JIRA_Authen">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="2121317f-ad3f-4f33-b948-019a57bb1c8b" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Update With Valid Comment" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="80919113-876d-457c-96c6-74c47f8a125f">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Try comment from SoapUI</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment</con:name>
+              <con:value>This comment has been updated</con:value>
+            </con:property>
+            <con:property>
+              <con:name>comment_id</con:name>
+              <con:value>10062</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Add Comment" id="f9be5e06-0cfa-4e02-b2e6-716c8619e21e">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Add Comment" id="811fb9ea-5239-49c0-b835-8c9eb2333cb8" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Transfer - Ticket ID" id="58556945-c823-4122-91fa-0097edd1b3ba">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ticket_id</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>Step 1 - Add Comment</con:sourceStep>
+            <con:sourcePath>$['id']}</con:sourcePath>
+            <con:targetType>comment_id</con:targetType>
+            <con:targetStep>Data</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 2 - Update Comment" id="08866881-0de7-4d6d-8bc4-0395a487797a">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment/{comment_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 2 - Update Comment" id="502b95a4-b856-4777-b493-f1dad709ffa4" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "body": "${Data#updated_comment}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/comment/10013</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="ticket_id" value="${Data#ticket_id}"/>
+              <con:entry key="comment_id" value="${Data#comment_id}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+              <con:entry>comment_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Update Comment Successfully" id="cb5d047e-4951-4bbb-981b-5336de87498b">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>6522d756-497b-4435-9185-4d4c472914b7</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>08866881-0de7-4d6d-8bc4-0395a487797a</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="f26b8528-d860-45a7-be18-46944af92d2b">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>05857d95-7bfa-466a-b20d-45eaebd321a9</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>08866881-0de7-4d6d-8bc4-0395a487797a</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="d1bddd1e-9fc1-4494-b19b-8a222568e6a0">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#updated_comment}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>80919113-876d-457c-96c6-74c47f8a125f</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="5452b5e6-2f27-488c-a4c9-8aed58e52168" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Update With Emply Comment" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="3db2c8a7-179f-486c-be19-13308b73d9f8">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Try comment from SoapUI</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment</con:name>
+              <con:value/>
+            </con:property>
+            <con:property>
+              <con:name>comment_id</con:name>
+              <con:value>10063</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Add Comment" id="f4729a59-07ea-4350-8d9a-1ca816df2fb6">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Add Comment" id="811fb9ea-5239-49c0-b835-8c9eb2333cb8" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Transfer - Ticket ID" id="4e1fad7d-20fc-4265-a184-d0a5878d56c0">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ticket_id</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>Step 1 - Add Comment</con:sourceStep>
+            <con:sourcePath>$['id']}</con:sourcePath>
+            <con:targetType>comment_id</con:targetType>
+            <con:targetStep>Data</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 2 - Update Comment" id="dd5cd686-ff98-414b-bf4b-d888bcf51e69">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment/{comment_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 2 - Update Comment" id="502b95a4-b856-4777-b493-f1dad709ffa4" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "body": "${Data#updated_comment}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/comment/10013</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="ticket_id" value="${Data#ticket_id}"/>
+              <con:entry key="comment_id" value="${Data#comment_id}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+              <con:entry>comment_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Update Comment Un-Successfully" id="6134135c-4d4e-4195-9d4d-daef9287f1bf">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>9e474f78-a1fe-444a-b844-e0947a40e3af</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>dd5cd686-ff98-414b-bf4b-d888bcf51e69</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="98fb7349-0cb5-43f5-a709-7c5c4b5f06f8">
+              <con:settings/>
+              <con:configuration>
+                <codes>400</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>abf551cf-fe40-4d67-a912-fde17f102639</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>dd5cd686-ff98-414b-bf4b-d888bcf51e69</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="9efb8853-d846-48a5-a0a5-c0605aa9260a">
+              <con:configuration>
+                <path>$['errors']['comment']</path>
+                <content>Comment body can not be empty!</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>3db2c8a7-179f-486c-be19-13308b73d9f8</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="dce357e9-f373-40b1-a5f5-8a1c6e1da213" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Update Comment Twice" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="c4be437e-d115-4ee6-bfbf-5cb57926b5b5">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Try comment from SoapUI</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment</con:name>
+              <con:value>Updated comment at the first time</con:value>
+            </con:property>
+            <con:property>
+              <con:name>comment_id</con:name>
+              <con:value>10064</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment_2</con:name>
+              <con:value>Updated comment at the second time</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Add Comment" id="8852810d-9e15-4ff8-98c0-0a59bdcd2f2d">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Add Comment" id="811fb9ea-5239-49c0-b835-8c9eb2333cb8" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Transfer - Ticket ID" id="c8615f05-b033-443a-af9e-2b4f16a1fb70">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ticket_id</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>Step 1 - Add Comment</con:sourceStep>
+            <con:sourcePath>$['id']}</con:sourcePath>
+            <con:targetType>comment_id</con:targetType>
+            <con:targetStep>Data</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 2 - Update Comment At First Time" id="257b9829-f923-4742-943f-1095e58cf7ff">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment/{comment_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 2 - Update Comment At First Time" id="502b95a4-b856-4777-b493-f1dad709ffa4" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "body": "${Data#updated_comment}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/comment/10013</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="ticket_id" value="${Data#ticket_id}"/>
+              <con:entry key="comment_id" value="${Data#comment_id}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+              <con:entry>comment_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 3 - Update Comment At The Second Time" id="ae9bb7d7-907a-4cb8-8ef0-798abc2f60dc">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment/{comment_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 3 - Update Comment At The Second Time" id="502b95a4-b856-4777-b493-f1dad709ffa4" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "body": "${Data#updated_comment_2}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/comment/10013</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="ticket_id" value="${Data#ticket_id}"/>
+              <con:entry key="comment_id" value="${Data#comment_id}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+              <con:entry>comment_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Update Comment Successfully" id="de7a0b10-8359-41c3-ad58-d71c99b62b8f">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>c0ca133a-0bef-4cac-91db-0de899c64949</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>ae9bb7d7-907a-4cb8-8ef0-798abc2f60dc</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="3d75f86f-92f0-4f5d-a834-b3fef5a3345c">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>97152b9b-f05c-47b8-beb9-3bbf9a81dec5</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>ae9bb7d7-907a-4cb8-8ef0-798abc2f60dc</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="124633db-5961-4496-a228-24c2d572073c">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#updated_comment_2}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>ae9bb7d7-907a-4cb8-8ef0-798abc2f60dc</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>c4be437e-d115-4ee6-bfbf-5cb57926b5b5</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="aa0e847e-bd1f-43bd-b5f2-caa40235ecfa" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Update Comment With Invalid Comment ID" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="f1be1339-780f-40b2-a4cc-84168f3a37db">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Try comment from SoapUI</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment</con:name>
+              <con:value>Hey hey</con:value>
+            </con:property>
+            <con:property>
+              <con:name>comment_id</con:name>
+              <con:value>Invalid</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Add Comment" id="de60d184-32b3-4ad1-a38e-901e96d5c2a2">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Add Comment" id="811fb9ea-5239-49c0-b835-8c9eb2333cb8" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 2 - Update Comment" id="9351922d-2028-4dd5-b118-ff324a2c710b">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment/{comment_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 2 - Update Comment" id="502b95a4-b856-4777-b493-f1dad709ffa4" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "body": "${Data#updated_comment}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/comment/10013</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="ticket_id" value="${Data#ticket_id}"/>
+              <con:entry key="comment_id" value="${Data#comment_id}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+              <con:entry>comment_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Update Comment Un-Successfully" id="1d4778fe-1448-4c83-8974-2cf37531c98a">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>df0ccce9-8f60-47f5-98e7-a59a7951fa66</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>9351922d-2028-4dd5-b118-ff324a2c710b</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="892ce8fe-6003-498e-9590-abfd3cc3009c">
+              <con:settings/>
+              <con:configuration>
+                <codes>404</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>92bdc322-6ef5-42b3-b217-e034ce5ca55e</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>9351922d-2028-4dd5-b118-ff324a2c710b</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="5a14f398-12a9-42f0-85b2-4add28afff1b">
+              <con:configuration>
+                <path>$['errorMessages'][0]</path>
+                <content>Can not find a comment for the id: Invalid.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>f1be1339-780f-40b2-a4cc-84168f3a37db</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="4637238f-5e96-436b-a9d7-04ca2ba7dd69" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Update Comment In Non-Owner Ticket" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="12c9bd07-66ec-4e8a-908c-ff0c81072770">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Try comment from SoapUI</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-3</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment</con:name>
+              <con:value>This comment has been updated</con:value>
+            </con:property>
+            <con:property>
+              <con:name>comment_id</con:name>
+              <con:value>10066</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Add Comment" id="4ab6814b-5437-4706-b63e-1949f0eda850">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Add Comment" id="811fb9ea-5239-49c0-b835-8c9eb2333cb8" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Transfer - Ticket ID" id="2ebc7cf6-2323-4b8d-b8ff-c64349e3c8f6">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ticket_id</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>Step 1 - Add Comment</con:sourceStep>
+            <con:sourcePath>$['id']}</con:sourcePath>
+            <con:targetType>comment_id</con:targetType>
+            <con:targetStep>Data</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 2 - Update Comment" id="dad9baea-63f0-407f-8edf-7ac8426e28ea">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/comment/{comment_id}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 2 - Update Comment" id="502b95a4-b856-4777-b493-f1dad709ffa4" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "body": "${Data#updated_comment}"
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/comment/10013</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="ticket_id" value="${Data#ticket_id}"/>
+              <con:entry key="comment_id" value="${Data#comment_id}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>ticket_id</con:entry>
+              <con:entry>comment_id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Update Comment Successfully" id="095a1c62-37cb-4777-ba06-cd3fa6891c24">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>41a1c9d7-bc6b-4ccc-a941-291e38758e10</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>dad9baea-63f0-407f-8edf-7ac8426e28ea</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="e3757884-cd6a-4a3b-8d64-b12c4b1fc51a">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>52a8fd3c-aa03-4f3f-9bb8-eda0b02c5c5a</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>dad9baea-63f0-407f-8edf-7ac8426e28ea</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="b5edc49a-4b98-4010-9e26-585260f52d7a">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#updated_comment}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>12c9bd07-66ec-4e8a-908c-ff0c81072770</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:testSuite id="2859d847-a9a2-4890-bd35-89b449c2a365" name="Suite - Do Transistion" authProfile="JIRA_Authen">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="bd77d166-7ce2-49c1-a07e-8a84f4ea6b67" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Change Status From TO-DO To IN PROGRESS" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="04efeef6-f87a-46d7-92f4-50a60ff29f40">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>todo_id</con:name>
+              <con:value>11</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>in_progress_id</con:name>
+              <con:value>21</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Change Status to TO-DO" id="ba04ac02-6145-4c9e-a7dc-ed21e7a82455">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/transitions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Change Status to TO-DO" id="9bacf57e-b8e1-4f11-8abc-bbaca27a1c89" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "transition": {
+        "id": "${Data#todo_id}"
+    }
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/transitions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 2 - Change Status to IN PROGRESS" id="7d6d0c5b-caad-4a43-ada4-f6cad18a2c94">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/transitions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 2 - Change Status to IN PROGRESS" id="9bacf57e-b8e1-4f11-8abc-bbaca27a1c89" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "transition": {
+        "id": "${Data#in_progress_id}"
+    }
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/transitions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Change Status Successfully" id="785fef6f-3c64-4f61-805a-93bcb3bad067">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>ae9e6cca-781d-494b-82a7-175f8c7ff477</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>7d6d0c5b-caad-4a43-ada4-f6cad18a2c94</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="6ea23bf8-216b-4a99-9fb5-c9da58fefd7a">
+              <con:settings/>
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>04efeef6-f87a-46d7-92f4-50a60ff29f40</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="922630e0-065b-492c-ace9-dc001b966233" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Change Status From TO-DO To DONE" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="bff918f5-6f63-4aae-8002-04da3be003ac">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>todo_id</con:name>
+              <con:value>11</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>done_id</con:name>
+              <con:value>31</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Change Status to TO-DO" id="967ffc91-fb46-49ca-b369-52a036050d03">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/transitions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Change Status to TO-DO" id="9bacf57e-b8e1-4f11-8abc-bbaca27a1c89" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "transition": {
+        "id": "${Data#todo_id}"
+    }
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/transitions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 2 - Change Status to DONE" id="7bc19f19-8ad8-4902-9e85-52c55a0da66e">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/transitions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 2 - Change Status to DONE" id="9bacf57e-b8e1-4f11-8abc-bbaca27a1c89" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "transition": {
+        "id": "${Data#done_id}"
+    }
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/transitions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Change Status Successfully" id="e045414e-513c-4e9b-a65d-5a73eaaf1bd3">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>def7e2bc-8b48-4677-9f98-334cad7abda9</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>7bc19f19-8ad8-4902-9e85-52c55a0da66e</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="6501440d-c70c-475c-989a-6b8c58b6b155">
+              <con:settings/>
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>04efeef6-f87a-46d7-92f4-50a60ff29f40</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="54255899-3ea0-4d78-94aa-235b8ec7ee09" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Change Status From IN PROGRESS To DONE" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="c4422a40-bbdd-48b4-8663-94e56012e934">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>in_progress_id</con:name>
+              <con:value>21</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>done_id</con:name>
+              <con:value>31</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Change Status to IN PROGRESS" id="be6abaf7-1d2a-4705-984f-a720a3796921">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/transitions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Change Status to IN PROGRESS" id="9bacf57e-b8e1-4f11-8abc-bbaca27a1c89" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "transition": {
+        "id": "${Data#in_progress_id}"
+    }
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/transitions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 2 - Change Status to DONE" id="79f64904-9b82-438e-b514-dee7c240bf0b">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/transitions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 2 - Change Status to DONE" id="9bacf57e-b8e1-4f11-8abc-bbaca27a1c89" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "transition": {
+        "id": "${Data#done_id}"
+    }
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/transitions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Change Status Successfully" id="5c87d0c6-d9ab-426b-b7df-a84fb26ed4d2">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>c902a4ec-d745-4ae2-a1d6-10a04c3cf604</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>79f64904-9b82-438e-b514-dee7c240bf0b</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="af0e4ec5-5c7b-4f8b-8bfc-5daa9eb64dd8">
+              <con:settings/>
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>04efeef6-f87a-46d7-92f4-50a60ff29f40</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="9e4d0e92-efee-41b3-9233-d7cb5776600e" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Change Status From DONE To IN PROGRESS" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="6e39041e-7780-49fe-961f-38211231001d">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>done_id</con:name>
+              <con:value>31</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>in_progress_id</con:name>
+              <con:value>21</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Change Status to DONE" id="e33b835f-49d6-4d8d-b80d-63840e297eb9">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/transitions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Change Status to DONE" id="9bacf57e-b8e1-4f11-8abc-bbaca27a1c89" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "transition": {
+        "id": "${Data#done_id}"
+    }
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/transitions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 2 - Change Status to IN PROGRESS" id="b6565d3f-d650-4298-9610-0f761b64a546">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/transitions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 2 - Change Status to IN PROGRESS" id="9bacf57e-b8e1-4f11-8abc-bbaca27a1c89" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "transition": {
+        "id": "${Data#in_progress_id}"
+    }
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/transitions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Change Status Successfully" id="64ce221a-b228-4144-b539-0f17f5dc350e">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>4e29bc3f-d5cd-4f80-be76-9d85e0fe3c3f</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>b6565d3f-d650-4298-9610-0f761b64a546</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="5e093db8-76c7-4e34-a060-b01cafaff4f6">
+              <con:settings/>
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>04efeef6-f87a-46d7-92f4-50a60ff29f40</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="4da03486-b006-4d31-92b2-d6a3dca870c8" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Change Status From DONE To TO-DO" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="0d770440-2be9-4918-9acb-5bd5d14fe047">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>done_id</con:name>
+              <con:value>31</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+            <con:property>
+              <con:name>todo_id</con:name>
+              <con:value>11</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1 - Change Status to DONE" id="f386fda2-6d8e-4c28-8fec-1c3bc15ce4f4">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/transitions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1 - Change Status to DONE" id="9bacf57e-b8e1-4f11-8abc-bbaca27a1c89" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "transition": {
+        "id": "${Data#done_id}"
+    }
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/transitions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 2 - Change Status to TO-DO" id="cce7750a-f882-4adc-966e-c45e3355d42a">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/transitions" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 2 - Change Status to TO-DO" id="9bacf57e-b8e1-4f11-8abc-bbaca27a1c89" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "transition": {
+        "id": "${Data#todo_id}"
+    }
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-1/transitions</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Change Status Successfully" id="9c9d08bc-549d-4e7f-a70d-bd72fe4c10ff">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>432e7737-5597-45c4-b349-fcad9ea424ed</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>cce7750a-f882-4adc-966e-c45e3355d42a</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="efad43ee-2bf6-48f0-95d7-5e6920c52e84">
+              <con:settings/>
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>04efeef6-f87a-46d7-92f4-50a60ff29f40</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:testSuite id="e05791b0-08de-41fb-86fe-2991fe6946a5" name="Suite - Add - Remove Vote" authProfile="JIRA_Authen">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="1ae36b85-53a4-40b9-b0f8-851362e8f0ce" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Add Vote To Non-Owner Ticket" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="b1883576-d722-4cf2-aec4-a2e7d301e792">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-3</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Add Vote" id="f1eb4958-5eb2-4b0b-bff4-b81fea69e378">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/votes" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Add Vote" id="780f51a2-187e-46a8-bceb-e135dbadd988" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/ticket_id/votes</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Add Vote Successfully" id="edebe4eb-f533-4451-b454-51f91a7b8208">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>2c483915-dd07-4ef3-9f70-71e8953b8bb1</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>f1eb4958-5eb2-4b0b-bff4-b81fea69e378</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="426b5dfd-31db-459e-a005-a16aa570b851">
+              <con:settings/>
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>b1883576-d722-4cf2-aec4-a2e7d301e792</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="15e50733-d44c-4b3a-8e4d-1a2e67260141" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Cannot Add Vote To Owner Ticket" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="d1a0b1f0-dafc-464d-a3aa-abb781cd084d">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-1</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Add Vote" id="88d681dc-abbc-414a-8baf-0ba01bff0e54">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/votes" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Add Vote" id="780f51a2-187e-46a8-bceb-e135dbadd988" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/ticket_id/votes</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Add Vote Successfully" id="563ad9b0-36d0-4f8b-af91-b871254519fe">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>559ffd2c-ab87-4480-95fd-412b2dbacab3</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>88d681dc-abbc-414a-8baf-0ba01bff0e54</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="b152824a-288a-425c-8e06-5b4012b65ac9">
+              <con:settings/>
+              <con:configuration>
+                <codes>404</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>71e21f1f-a12d-40a6-a663-e654919be68b</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>88d681dc-abbc-414a-8baf-0ba01bff0e54</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="c037a4fe-2506-433c-b5b3-ce8c3ac97efb">
+              <con:configuration>
+                <path>$['errorMessages'][0]</path>
+                <content>You cannot vote for an issue you have reported.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>d1a0b1f0-dafc-464d-a3aa-abb781cd084d</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="5b121e09-b93f-4c4b-bac9-02a2094aeb81" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Remove Vote From Non-Owner Ticket" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="68430cec-b3db-491f-96dd-bea153abf7fe">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-3</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Add Vote" id="7cfe13db-70ff-46ab-9736-ea35d5e510b3">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/votes" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Add Vote" id="780f51a2-187e-46a8-bceb-e135dbadd988" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/ticket_id/votes</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Steps 2: Remove Vote" id="74dc1006-9b0d-4082-9bbc-41890e310287">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/votes" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Steps 2: Remove Vote" id="4c0915ef-7f39-482b-b56a-e245db603aff" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-3/votes</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert -  Remove Vote Successfully" id="1596883f-b4dd-44a2-b1cd-d4793874ad8a">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>c3db4be4-389f-4ed3-9ab5-3d70c5fee4ab</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>74dc1006-9b0d-4082-9bbc-41890e310287</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="c9c6d59a-330c-4ba3-a9dc-2e743bf12fb4">
+              <con:settings/>
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>68430cec-b3db-491f-96dd-bea153abf7fe</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="c8d2d372-cce7-4966-98b9-7808c665f458" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Cannot Add Vote To Non-Exist Issue" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Step 1: Add Vote" id="c9af2252-acd8-4c34-aa94-2a5ed69a8340">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/votes" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Add Vote" id="780f51a2-187e-46a8-bceb-e135dbadd988" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/ticket_id/votes</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="None" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Add Vote Successfully" id="23d34e1b-ad50-47c7-8852-b5fb81212401">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>a43aed88-c422-44cb-9a19-a3cc2d384998</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>c9af2252-acd8-4c34-aa94-2a5ed69a8340</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="da8ebd17-c062-47a4-8b5b-a7f06c75da37">
+              <con:settings/>
+              <con:configuration>
+                <codes>404</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>68861719-31ab-45a5-95d2-2bfeb05c5735</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>c9af2252-acd8-4c34-aa94-2a5ed69a8340</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="a97d3cbf-5e13-40f7-a94e-e2c9fb3c1dc8">
+              <con:configuration>
+                <path>$['errorMessages'][0]</path>
+                <content>Issue does not exist or you do not have permission to see it.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="79c7195e-42be-404f-950b-239ca6cfcca3" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Vote Ticked After Remove Vote" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="0aa2558c-c6d7-48f6-ad66-f835041bc866">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>SOAP-3</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Add Vote" id="cb4c4c63-7ee0-403d-8348-f57e8cbf9235">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/votes" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Add Vote" id="780f51a2-187e-46a8-bceb-e135dbadd988" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/ticket_id/votes</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Steps 2: Remove Vote" id="09ea71d3-0fdd-49de-be06-1958f9823f62">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/votes" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Steps 2: Remove Vote" id="4c0915ef-7f39-482b-b56a-e245db603aff" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/SOAP-3/votes</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 3: Add Vote Again" id="69cd0092-7064-4c15-8be0-de5b1a12b605">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" resourcePath="/issue/{ticket_id}/votes" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 3: Add Vote Again" id="780f51a2-187e-46a8-bceb-e135dbadd988" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/issue/ticket_id/votes</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="ticket_id" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Re-Vote Successfully" id="d0d9dead-d6d6-48c2-87ce-183f6e214b82">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>829ef99d-6a83-4170-ae98-f790d4c81a51</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>69cd0092-7064-4c15-8be0-de5b1a12b605</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="81d79b08-ae24-427f-b42e-a1f0c4638ccf">
+              <con:settings/>
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>0aa2558c-c6d7-48f6-ad66-f835041bc866</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:testSuite id="db8aceaf-65a3-47bf-9ee3-49a7df15a683" name="Suite - Search JQL" authProfile="JIRA_Authen">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="335f414d-ffc3-4e2b-8f1d-77d19ae4be55" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Search With Issue Type" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="b81796dc-5331-4b4b-9eef-9aa18661e076">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>jql</con:name>
+              <con:value>project = SOAP AND issuetype = Task</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Search With Status" id="1876e660-01fe-4945-beb9-50d858ab5727">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" methodName="Method 1" resourcePath="/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Search With Status" id="9856cd28-da88-40c4-a9ad-ff7e9618d8fa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "jql": "${Data#jql}",
+    "startAt": 0,
+    "maxResults": 15,
+    "fields": [
+        "summary",
+        "status",
+        "assignee"
+    ]
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/search</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Search Successfully" id="d893fe1b-e248-40a2-b554-9cd60504734b">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>5ce814ff-3990-408e-9a13-71135fdc2f87</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>1876e660-01fe-4945-beb9-50d858ab5727</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="b09fdfa7-e17a-4ab9-a3fe-503ed010f6b1">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>563711a0-6b9e-42ec-ac9b-42321729b0b1</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>1876e660-01fe-4945-beb9-50d858ab5727</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="af297169-2c67-4be4-b388-3fba3b0b0678">
+              <con:configuration>
+                <path>$['issues'][0]['key']</path>
+                <content>SOAP-4</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>b81796dc-5331-4b4b-9eef-9aa18661e076</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="ef6bf866-65aa-4b16-bb6e-f5334910c73f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Search With Wrong Field" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="277a4ce3-724e-4c3c-90ee-6bb68c429f97">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>jql</con:name>
+              <con:value>project=SOAP and reporterer in (khoa.hoang)</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Search With Wrong Field" id="c545dbab-a1c0-4f5c-8532-5b180128db8f">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" methodName="Method 1" resourcePath="/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Search With Wrong Field" id="9856cd28-da88-40c4-a9ad-ff7e9618d8fa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "jql": "${Data#jql}",
+    "startAt": 0,
+    "maxResults": 15,
+    "fields": [
+        "summary",
+        "status",
+        "assignee"
+    ]
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/search</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Search Un-Successfully" id="f4b74c76-bcb0-4491-8874-f1c37ad5d3a3">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>988345a3-34b7-4f38-a172-9ce0312bf101</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>c545dbab-a1c0-4f5c-8532-5b180128db8f</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="61359519-cdc8-4a11-ab1f-c02dd67c278e">
+              <con:settings/>
+              <con:configuration>
+                <codes>400</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>03f594dc-4eb8-4d08-8aaf-1739852b20db</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>c545dbab-a1c0-4f5c-8532-5b180128db8f</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="1d11d4f9-dedf-4183-be89-6993c02fd948">
+              <con:configuration>
+                <path>$['errorMessages'][0]</path>
+                <content>Field 'reporterer' does not exist or you do not have permission to view it.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>277a4ce3-724e-4c3c-90ee-6bb68c429f97</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="028306c0-9171-40e0-9524-5afec489435f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Search With Wrong Syntax" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="1e9acde3-2d8d-44cd-8f1e-9c2666905080">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>jql</con:name>
+              <con:value>project SOAP and reporterer in (khoa.hoang)</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Search With Wrong Syntax" id="b51d7282-cd00-4e09-9b49-89c946b1f9d6">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" methodName="Method 1" resourcePath="/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Search With Wrong Syntax" id="9856cd28-da88-40c4-a9ad-ff7e9618d8fa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "jql": "${Data#jql}",
+    "startAt": 0,
+    "maxResults": 15,
+    "fields": [
+        "summary",
+        "status",
+        "assignee"
+    ]
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/search</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Search Un-Successfully" id="91b80824-7889-4991-bd8d-e2ef5f0610f0">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>f60cc83f-9176-4f57-bddf-66cb1c62c7fa</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>b51d7282-cd00-4e09-9b49-89c946b1f9d6</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="8713f6ea-a6f5-4dd3-82d5-a02d7ebb0f24">
+              <con:settings/>
+              <con:configuration>
+                <codes>400</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>900661ab-c1a0-4e71-baf9-203b855633e5</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>b51d7282-cd00-4e09-9b49-89c946b1f9d6</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="fc5fb3d5-f54b-4b4c-bcd3-d45816ecafcf">
+              <con:configuration>
+                <path>$['errorMessages'][0]</path>
+                <content>Error in the JQL Query: Expecting operator but got 'SOAP'. The valid operators are '=', '!=', '&lt;', '>', '&lt;=', '>=', '~', '!~', 'IN', 'NOT IN', 'IS' and 'IS NOT'. (line 1, character 9)</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>1e9acde3-2d8d-44cd-8f1e-9c2666905080</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="556847c8-447b-44e4-a331-277dc8063997" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Search With Assignee" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="9398b610-ad91-4eb7-ac03-19ad51117ebe">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>jql</con:name>
+              <con:value>project = SOAP AND assignee in (khoa.hoang)</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Search With Assignee" id="94b0b29c-17ad-4555-992e-a6a2c5650c23">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" methodName="Method 1" resourcePath="/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Search With Assignee" id="9856cd28-da88-40c4-a9ad-ff7e9618d8fa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "jql": "${Data#jql}",
+    "startAt": 0,
+    "maxResults": 15,
+    "fields": [
+        "summary",
+        "status",
+        "assignee"
+    ]
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/search</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Search Successfully" id="c2fa1b72-07d2-48b6-aad0-bce70936570e">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>674a7572-53e2-49be-adb4-4f5453550aec</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>94b0b29c-17ad-4555-992e-a6a2c5650c23</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="b8ad5c64-d033-4b8f-9a31-eeaed4259e4d">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>eb24a459-3be7-4563-a989-abd89db47f69</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>94b0b29c-17ad-4555-992e-a6a2c5650c23</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="cf61dd8e-0936-41bc-9729-c40775805299">
+              <con:configuration>
+                <path>$['issues'][0]['key']</path>
+                <content>SOAP-4</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>9398b610-ad91-4eb7-ac03-19ad51117ebe</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="c3519cbb-eb9f-4e83-902b-8bfbfe965f39" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TC - Search With Multi-Field" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="b00b4a8d-b420-4336-bb1b-8176ad23a620">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>jql</con:name>
+              <con:value>project = SOAP AND issuetype = Task AND status = \"To Do\" AND assignee in (khoa.hoang) AND reporter in (khoa.hoang)</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Search With Assignee" id="8046d963-d29f-4ac9-b080-243b7b63e4ae">
+        <con:settings/>
+        <con:config service="https://phivo.atlassian.net" methodName="Method 1" resourcePath="/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Search With Assignee" id="9856cd28-da88-40c4-a9ad-ff7e9618d8fa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://phivo.atlassian.net/rest/api/2</con:endpoint>
+            <con:request>{
+    "jql": "${Data#jql}",
+    "startAt": 0,
+    "maxResults": 15,
+    "fields": [
+        "summary",
+        "status",
+        "assignee"
+    ]
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/search</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Search Successfully" id="b017dca9-68a6-41cc-957a-57a4d88cde17">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>b3f512a4-528c-4410-9228-1a8b047a0e20</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>8046d963-d29f-4ac9-b080-243b7b63e4ae</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="455c01f9-2c4e-4b30-9cb3-43a129d143fc">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>6db5bfdf-42ed-4350-b1de-a70467b1b4d8</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>8046d963-d29f-4ac9-b080-243b7b63e4ae</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="ae66244b-4a6d-4e95-9a10-ecca758c5c61">
+              <con:configuration>
+                <path>$['issues'][0]['key']</path>
+                <content>SOAP-4</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>b00b4a8d-b420-4336-bb1b-8176ad23a620</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+    <con:parameters/>
+  </con:reporting>
+  <con:reporting/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// def token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// def token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// def headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository>
+    <con:basicAuthEntry>
+      <con:name>JIRA_Authen</con:name>
+      <con:type>Basic</con:type>
+      <con:username>phi.vo027@gmail.com</con:username>
+      <con:password>yJglfaL2tZYg3k02S59DCCFE</con:password>
+      <con:preemptive>true</con:preemptive>
+    </con:basicAuthEntry>
+  </con:authRepository>
+  <con:tags/>
+</con:soapui-project>

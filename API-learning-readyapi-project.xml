@@ -1,0 +1,2825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7988362f-5af7-42e9-860f-bc35cec083ef" created="2.7.0" activeEnvironment="Default environment" name="API_learning" resourceRoot="" authProfile="home" updated="2.7.0 2019-05-30T13:25:24Z" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="c1214eed-6669-4e28-9ce7-b84d4ef9790a" wadlVersion="http://wadl.dev.java.net/2009/02" name="Jira TrungTran" type="rest" basePath="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+    </con:endpoints>
+    <con:resource name="mypermissions" path="rest/api/2//mypermissions" id="b417a60d-eae3-4197-b886-e79a9ec0055e">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="get" id="eaee069b-f727-40cb-94de-c4d03c93d565" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:myp="https://janjungapi.atlassian.net/rest/api/2/mypermissions">myp:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element xmlns:ns="https://janjungapi.atlassian.net/rest/api/2/issue/AP-5/comment/10015">ns:Fault</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="my permissions" id="4910ed05-4aa6-41e4-adc7-d1794083724b" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/mypermissions</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="issue" path="/rest/api/2/issue" id="6fc79ff1-becb-43d3-a4a0-284e93e03d75">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="comment" path="{issueIdOrKey}/comment" id="05e9f3c9-2f90-4132-a105-a7465a877d03">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>issueIdOrKey</con:name>
+            <con:value>issueIdOrKey</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>issueIdOrKey</con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:resource name="update comment" path="/{id}" id="140a596c-7bc7-407f-b575-43447f29e76f">
+          <con:settings/>
+          <con:parameters>
+            <con:parameter required="true">
+              <con:name>issueIdOrKey</con:name>
+              <con:value>issueIdOrKey</con:value>
+              <con:style>TEMPLATE</con:style>
+              <con:default>issueIdOrKey</con:default>
+            </con:parameter>
+            <con:parameter required="true">
+              <con:name>id</con:name>
+              <con:value>id</con:value>
+              <con:style>TEMPLATE</con:style>
+              <con:default>id</con:default>
+            </con:parameter>
+          </con:parameters>
+          <con:method name="update comment" id="44919a60-f832-4799-816d-92f61f053228" method="PUT">
+            <con:settings/>
+            <con:parameters/>
+            <con:representation type="REQUEST">
+              <con:mediaType>application/json</con:mediaType>
+              <con:params/>
+            </con:representation>
+            <con:representation type="RESPONSE">
+              <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+              <con:status>200</con:status>
+              <con:params/>
+              <con:element xmlns:ns="https://janjungapi.atlassian.net/rest/api/2/issue/AP-4/comment/10013">ns:Response</con:element>
+            </con:representation>
+            <con:representation type="FAULT">
+              <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+              <con:status>404</con:status>
+              <con:params/>
+              <con:element xmlns:inv="https://janjungapi.atlassian.net/rest/api/2/issue/AP-7/comment/Invalid">inv:Fault</con:element>
+            </con:representation>
+            <con:request name="Request 1" id="978e6e8e-00ce-4a58-9352-2f1768abc2f3" mediaType="application/json" postQueryString="false">
+              <con:settings>
+                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+              </con:settings>
+              <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+              <con:request>{
+	"body": "${Data#updated_comment}"
+}</con:request>
+              <con:credentials>
+                <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+                <con:authType>No Authorization</con:authType>
+              </con:credentials>
+              <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+              <con:parameters/>
+            </con:request>
+          </con:method>
+        </con:resource>
+        <con:method name="add comment" id="d2dbfbb4-7747-42e9-8d26-0f8e0d9e964b" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+            <con:status>404 400</con:status>
+            <con:params/>
+            <con:element xmlns:com="https://janjungapi.atlassian.net/rest/api/2/issue/AP-4/comment">com:Fault</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+            <con:status>201</con:status>
+            <con:params/>
+            <con:element xmlns:com="https://janjungapi.atlassian.net/rest/api/2/issue/AP-7/comment">com:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="39b02abc-2244-42aa-8486-98b0982ae6ca" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder>
+              <con:entry>issueIdOrKey</con:entry>
+            </con:parameterOrder>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="votes" path="/{issueKeyOrId}/votes" id="127bfab5-a193-49af-aa4b-4da5aca40029">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>issueKeyOrId</con:name>
+            <con:value>issueKeyOrId</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>issueKeyOrId</con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="add vote" id="2cd0a865-8f70-4489-b76c-aac73cf89f3a" method="POST">
+          <con:settings/>
+          <con:parameters/>
+          <con:request name="Request 1" id="15e6487d-3503-4f65-99b7-39dc463c42b2" mediaType="application/json" postQueryString="false">
+            <con:settings/>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request/>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+        <con:method name="delete vote" id="b3cd2164-4059-4982-bf03-9ddbdc337705" method="DELETE">
+          <con:settings/>
+          <con:parameters/>
+          <con:request name="Request 1" id="59669878-f0af-49ed-b6a4-58f2494601b8" mediaType="application/json" postQueryString="false">
+            <con:settings/>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request/>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="post" id="0804343a-04f1-436a-b2b0-350477898495" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+          <con:status>415</con:status>
+          <con:params/>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element xmlns:iss="https://janjungapi.atlassian.net/rest/api/2/issue">iss:Fault</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element xmlns:iss="https://janjungapi.atlassian.net/rest/api/2/issue">iss:Response</con:element>
+        </con:representation>
+        <con:request name="create issue" id="7529150e-ecd8-4db2-a611-6925f604e19b" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+          <con:request>{
+   "fields": {
+        "project": {
+            "id": "10000"
+        },
+        "summary": "AP story 001",
+        "issuetype": {
+            "id": "10107"
+        },
+        "assignee": {
+            "name": "hdkani"
+        },
+        "reporter": {
+            "name": "hdkani"
+        },
+        "invalidField": {
+            "invalid": "cai nay khong co that"
+        },
+        "labels": [
+            "newstory",
+            "test_story"
+        ]
+    }
+}</con:request>
+          <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+            <con:preemptive>true</con:preemptive>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="createmeta" path="/rest/api/2/issue/createmeta" id="ffa1c508-c06f-482f-bb5f-87b07f2c8a8b">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Method 1" id="5711b167-4541-4760-8da2-d34fe029a106" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:cre="https://janjungapi.atlassian.net/rest/api/2/issue/createmeta">cre:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="56defe22-8617-421a-bb8f-11c24532f47f" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/createmeta</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="project" path="/rest/api/2/project" id="6ba16ecd-0cef-408b-a5e0-793cd9b3c102">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="type" path="type" id="d05c4679-7407-4052-a13f-2e0fb06f2edd">
+        <con:settings/>
+        <con:parameters/>
+        <con:method name="get all project key types" id="16e7cf2b-cf6c-4f4b-a8cc-ff22f9d7dc45" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="d1d11082-af5a-4e3e-b085-6b8b2084219c" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/project/type</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="delete project" path="{projectIdOrKey}" id="a924a8ab-8cca-4eca-97a3-ead6c4d3eceb">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>projectIdOrKey</con:name>
+            <con:value>projectIdOrKey</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>projectIdOrKey</con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Method 1" id="c29d2778-e00d-434c-91ec-b4da7ae624f2" method="DELETE">
+          <con:settings/>
+          <con:parameters/>
+          <con:request name="Request 1" id="c0c9a6c5-0836-4ba4-95d5-842a65f2a8a8" mediaType="application/json" postQueryString="false">
+            <con:settings/>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request/>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="get project info" id="690a271d-f8b6-41f0-a086-5f6d9d650028" method="GET">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>expand</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+          </con:parameter>
+          <con:parameter required="true">
+            <con:name>recent</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:proj="https://janjungapi.atlassian.net/rest/api/2/project">proj:Fault</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="83f4576d-4b44-444b-8839-9e8859487d16" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/project</con:originalUri>
+          <con:credentials>
+            <con:username>trung.tran.pts001@gmail.com</con:username>
+            <con:password>XJdTaDXBH9j2b2w7pd5m1633</con:password>
+            <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+            <con:preemptive>true</con:preemptive>
+            <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+          <con:parameterOrder>
+            <con:entry>expand</con:entry>
+            <con:entry>recent</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Create project" id="9d1bf6ff-b483-4f9c-8f4b-7f1b5cb967b7" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>400 401</con:status>
+          <con:params/>
+          <con:element xmlns:proj="https://janjungapi.atlassian.net/rest/api/2/project">proj:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element xmlns:proj="https://janjungapi.atlassian.net/rest/api/2/project">proj:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="2a917e70-eeb9-4fb0-b7a6-d05acc29ac80" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+          <con:request>{
+    "key": "DORANEW",
+    "name": "Doraemon valid name",
+    "projectTypeKey": "business",
+    "projectTemplateKey": "com.atlassian.jira-core-project-templates:jira-core-project-management",
+    "description": "Project Sample Type is Business",
+    "lead": "invalidLead",
+    "url": "http://atlassian.com",
+    "assigneeType": "PROJECT_LEAD",
+    "avatarId": 10200,
+    "permissionScheme": 10000
+}</con:request>
+          <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/project</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+          <con:parameterOrder/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="search" path="/rest/api/2/search" id="a19be686-c1c4-4e39-b2d9-1379edb0146e">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Method 1" id="3ff403fe-bcb5-477a-bb46-0f9bc6fe6d4d" method="POST">
+        <con:settings/>
+        <con:parameters></con:parameters>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element xmlns:sear="https://janjungapi.atlassian.net/rest/api/2/user/assignable/search">sear:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element>html</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element>html</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="ce1bf5cc-395a-4942-95bf-b2f87751f915" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+          <con:request>{
+    "jql": "${Data#jql}",
+    "startAt": 0,
+    "maxResults": 15,
+    "fields": [
+        "summary",
+        "status",
+        "assignee"
+    ]
+}</con:request>
+          <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/user/assignable/search</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+          <con:parameterOrder/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="priority" path="/rest/api/2/priority" id="0a5eddb6-ecba-4e04-92f9-36609a755e5e">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Method 1" id="0b6610aa-6cda-4377-b979-f7d289114486" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="5410a645-f51c-4ef5-81f5-132b886d5b33" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/priority</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="issuesecurityschemes" path="/rest/api/2/issuesecurityschemes" id="19542a94-a812-48a0-bd9f-ef291a2bea5b">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Method 1" id="04fd0ac0-e2a6-43a1-8169-6295b4e9e344" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:iss="https://janjungapi.atlassian.net/rest/api/2/issuesecurityschemes">iss:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="7e263061-a847-4e7b-a15d-3f3f621a6c34" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issuesecurityschemes</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="permissionscheme" path="/rest/api/2/permissionscheme" id="fdb70e56-bb70-4054-8194-36a5754ab4f5">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Method 1" id="423740f2-9021-4a60-b11a-ebfadf34b778" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:per="https://janjungapi.atlassian.net/rest/api/2/permissionscheme">per:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="6390c9f6-a632-48c8-85db-c39788e62bfa" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/permissionscheme</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="3da5a07b-ffac-4f70-8c34-3a4d06f3129b" name="Suite - Create Issue">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="a36e419f-0822-466c-ad2c-192c32409eeb" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Pre Condition" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="get project info" id="042af8c6-fad0-4193-920c-4eaf543626b5">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/project" methodName="get project info" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="get project info" id="83f4576d-4b44-444b-8839-9e8859487d16" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/project</con:originalUri>
+            <con:credentials>
+              <con:username>trung.tran.pts001@gmail.com</con:username>
+              <con:password>XJdTaDXBH9j2b2w7pd5m1633</con:password>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:preemptive>true</con:preemptive>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="expand" value="issueTypes"/>
+              <con:entry key="recent" value="1"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>expand</con:entry>
+              <con:entry>recent</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="set data test" id="d9c8d453-3896-41ce-b577-375ad6ba0a3a">
+        <con:settings/>
+        <con:config>
+          <script>String projectId = ''
+String issueId = ''
+
+assert context.response, 'Response is empty or null'
+def json = new groovy.json.JsonSlurper().parseText(context.response)
+log.info json[0].id
+projectId = json[0].id.toString()
+
+def issueTypes = json[0].issueTypes
+
+for(def issueType : issueTypes) {
+      if(issueType.name == 'Story') {
+      issueId = issueType.id
+      break
+      }
+}
+
+log.info issueId
+
+context.testCase.testSuite.setPropertyValue('projectId', projectId)
+context.testCase.testSuite.setPropertyValue('issueId', issueId)</script>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="e74ef82c-3f76-4811-978e-aed15efca792" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_001 - User is able create an issue with issue type is story" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="create an issue with issue type is story" id="4f3dac57-535e-4488-a17f-0d7c38ec7069">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue" methodName="post" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="create an issue with issue type is story" id="7529150e-ecd8-4db2-a611-6925f604e19b" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+   "fields": {
+        "project": {
+            "id": "${#TestSuite#projectId}"
+        },
+        "summary": "AP story 001",
+        "issuetype": {
+            "id": "${#TestSuite#issueId}"
+        },
+        "assignee": {
+            "name": "hdkani"
+        },
+        "reporter": {
+            "name": "hdkani"
+        },
+        "labels": [
+            "newstory",
+            "test_story"
+        ]
+    }
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="3399e69b-7ed5-4040-b673-b2a2933dc6bc">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" name="Verify that the response contains the correct key format" id="64bd1ba9-768f-4234-bd4f-2457e3a55438">
+              <con:configuration>
+                <path>$['key']</path>
+                <content>AP-*</content>
+                <allowWildcards>true</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:preemptive>true</con:preemptive>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="e156902c-e8ab-47cd-aa3c-aee17208d493" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_002 - User is able create an issue with issue type is task" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Send request to create an issue with issue type is task" id="46ea0bb2-4a21-432b-91c5-624d63d2c975">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue" methodName="post" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Send request to create an issue with issue type is task" id="7529150e-ecd8-4db2-a611-6925f604e19b" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+   "fields": {
+        "project": {
+            "id": "${#TestSuite#projectId}"
+        },
+        "summary": "AP task 001",
+        "issuetype": {
+            "id": "${#TestSuite#issueId}"
+        },
+        "assignee": {
+            "name": "hdkani"
+        },
+        "reporter": {
+            "name": "hdkani"
+        },
+        "labels": [
+            "newtask",
+            "test_task"
+        ]
+    }
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="4c575578-1c1a-4bd6-a0ca-ea81619016c8">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" name="Verify that the response contains the correct key format" id="098fb8c4-3fee-4a9d-8d87-416c58880968">
+              <con:configuration>
+                <path>$['key']</path>
+                <content>AP-*</content>
+                <allowWildcards>true</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:preemptive>true</con:preemptive>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="8ae29891-1218-4676-b907-5bdc733f6987" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_003 - User is able create an issue with issue type is bug" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Send request to create an issue with issue type is bug" id="783778fc-3c54-4229-8fb9-75451608f1e1">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue" methodName="post" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Send request to create an issue with issue type is bug" id="7529150e-ecd8-4db2-a611-6925f604e19b" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+   "fields": {
+        "project": {
+            "id": "${#TestSuite#projectId}"
+        },
+        "summary": "AP bug 001",
+        "issuetype": {
+            "id": "${#TestSuite#issueId}"
+        },
+        "assignee": {
+            "name": "hdkani"
+        },
+        "reporter": {
+            "name": "hdkani"
+        },
+        "labels": [
+            "newbug"
+        ]
+    }
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="dd340c62-d884-4bf5-a764-190550fab87a" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="5bf3b6f6-b669-480d-affe-07041125460d" name="Verify that the response contains the correct key format">
+              <con:configuration>
+                <path>$['key']</path>
+                <content>AP-*</content>
+                <allowWildcards>true</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:preemptive>true</con:preemptive>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="e17e9ba9-c794-43f1-9cc4-ad86f7766314" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_004 - User is not able to create an issue  with payload contains unavailable data field" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Send request to create an issue  with payload contains unavailable data field" id="ab008b54-b7dc-4296-8c45-77ab39dbdefb">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue" methodName="post" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Send request to create an issue  with payload contains unavailable data field" id="7529150e-ecd8-4db2-a611-6925f604e19b" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+   "fields": {
+        "project": {
+            "id": "${#TestSuite#projectId}"
+        },
+        "summary": "AP story 001",
+        "issuetype": {
+            "id": "${#TestSuite#issueId}"
+        },
+        "assignee": {
+            "name": "hdkani"
+        },
+        "reporter": {
+            "name": "hdkani"
+        },
+        "invalidField": {
+            "invalid": "cai nay khong co that"
+        },
+        "labels": [
+            "newstory",
+            "test_story"
+        ]
+    }
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="39b79753-fc38-4473-b390-306a9ffbe052" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>400</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f3cb4b1f-675c-43d6-b764-819ff711b407" name="JSONPath Match">
+              <con:configuration>
+                <path>$['errors']['invalidField']</path>
+                <content>Field 'invalidField' cannot be set. It is not on the appropriate screen, or unknown.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:preemptive>true</con:preemptive>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="e8a64918-d08b-490f-9479-5588037c1011" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_005 - User is not able to create an issue with inexisted issue type" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Send request to create an issue with inexisted issue type" id="96fb6447-a2d6-4ad9-b88f-dedd995110b8">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue" methodName="post" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Send request to create an issue with inexisted issue type" id="7529150e-ecd8-4db2-a611-6925f604e19b" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+   "fields": {
+        "project": {
+            "id": "${#TestSuite#projectId}"
+        },
+        "summary": "AP story 001",
+        "issuetype": {
+            "id": "199999"
+        },
+        "assignee": {
+            "name": "hdkani"
+        },
+        "reporter": {
+            "name": "hdkani"
+        },
+        "labels": [
+            "newstory",
+            "test_story"
+        ]
+    }
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="8f9d3294-24b0-4a26-9a95-d60570447074" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>400</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="097848b9-b742-4bcb-a914-92ce61ffdd5e" name="JSONPath Match">
+              <con:configuration>
+                <path>$['errors']['issuetype']</path>
+                <content>valid issue type is required</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:preemptive>true</con:preemptive>
+              <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties>
+      <con:property>
+        <con:name>projectId</con:name>
+        <con:value>10000</con:value>
+      </con:property>
+      <con:property>
+        <con:name>issueId</con:name>
+        <con:value>10108</con:value>
+      </con:property>
+    </con:properties>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:testSuite id="465d8889-e4cf-4375-8a0e-05e58810c861" name="Suite - Create project">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="3e00eaf0-ac38-4303-a98f-91ac8cfc0451" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Pre condition" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="groovy" name="Generate data test" id="3b80977b-dffa-44f3-8e6c-54f0f4ee9e10">
+        <con:settings/>
+        <con:config>
+          <script>def generator = { String alphabet, int n ->
+  new Random().with {
+    (1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
+  }
+}
+
+String rString = generator( (('A'..'Z')+('0'..'9')).join(), 5 )
+
+context.testCase.testSuite.setPropertyValue('SProjectName', 'DORA Software Test '+rString)
+context.testCase.testSuite.setPropertyValue('SProjectKey', 'DORS'+rString)
+context.testCase.testSuite.setPropertyValue('BProjectName', 'DORA Business Test '+rString)
+context.testCase.testSuite.setPropertyValue('BProjectKey', 'DORB'+rString)</script>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="6726e86c-6574-41c0-88c9-cf5b4875d7c8" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_006 - User is able to create a project with projectTypeKey is Software" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Create a project with project type is software" id="8ef90b43-b57e-46a2-981d-f34dbe2eceab">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/project" methodName="Create project" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Create a project with project type is software" id="2a917e70-eeb9-4fb0-b7a6-d05acc29ac80" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+    "key": "${#TestSuite#SProjectKey}",
+    "name": "${#TestSuite#SProjectName}",
+    "projectTypeKey": "software",
+    "projectTemplateKey": "com.pyxis.greenhopper.jira:gh-scrum-template",
+    "description": "Project Sample Type is Software",
+    "lead": "admin",
+    "url": "http://atlassian.com",
+    "assigneeType": "PROJECT_LEAD",
+    "avatarId": 10200,
+    "permissionScheme": 10000
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/project</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="79c0b58b-0aa6-4b90-bfc1-29f7abf0040e" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="f00698ee-8ac1-4846-aaaf-c8869b6f582a" name="Verify that the created project have correct projectKey">
+              <con:configuration>
+                <path>$['key']</path>
+                <content>${#TestSuite#SProjectKey}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="564195cb-6760-4f29-8e23-0f9d223842a3" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_007 - User is able to create a project with projectTypeKey is Business" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Create a project with project type is business" id="5b4837ae-db62-4592-9200-8f88f06c516d">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/project" methodName="Create project" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Create a project with project type is business" id="2a917e70-eeb9-4fb0-b7a6-d05acc29ac80" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+    "key": "${#TestSuite#BProjectKey}",
+    "name": "${#TestSuite#BProjectName}",
+    "projectTypeKey": "business",
+    "projectTemplateKey": "com.atlassian.jira-core-project-templates:jira-core-project-management",
+    "description": "Project Sample Type is Business",
+    "lead": "admin",
+    "url": "http://atlassian.com",
+    "assigneeType": "PROJECT_LEAD",
+    "avatarId": 10200,
+    "permissionScheme": 10000
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/project</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="3b714932-6c30-4cae-aede-2fbd3ab58d50">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" name="Verify that the created project have correct projectKey" id="47468b4a-af04-4056-8656-a67c1dd4a1d4">
+              <con:configuration>
+                <path>$['key']</path>
+                <content>${#TestSuite#BProjectKey}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="f1efad18-dbc8-4c10-9f7c-eacb659b1405" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_008 - User is not able to create a project with duplicated projectName" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Create project with duplicated project key" id="60f0d03b-d9f8-4ae5-8e02-a2f67fe6d46f">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/project" methodName="Create project" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Create project with duplicated project key" id="2a917e70-eeb9-4fb0-b7a6-d05acc29ac80" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+    "key": "AP",
+    "name": "Doraemon Business",
+    "projectTypeKey": "business",
+    "projectTemplateKey": "com.atlassian.jira-core-project-templates:jira-core-project-management",
+    "description": "Project Sample Type is Business",
+    "lead": "admin",
+    "url": "http://atlassian.com",
+    "assigneeType": "PROJECT_LEAD",
+    "avatarId": 10200,
+    "permissionScheme": 10000
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/project</con:originalUri>
+            <con:assertion type="JsonPath Match" id="7253aeff-6242-456d-b95a-696f58fd7241" name="Verify the displayed error of projectName is correct">
+              <con:configuration>
+                <path>$['errors']['projectName']</path>
+                <content>A project with that name already exists.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="2b728c52-b142-4a16-9449-0bbfceb60bca" name="Verify the displayed error of projectKey is correct">
+              <con:configuration>
+                <path>$['errors']['projectKey']</path>
+                <content>Project 'APILearning' uses this project key.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="f92afe5f-8a5f-4b4c-b95b-bded92a2cc2e" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_009 - User is not able to create a project with invalid projectTypeKey" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Create project with invalid project key" id="6b118b56-9132-4da3-bef1-33c7ff067983">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/project" methodName="Create project" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Create project with invalid project key" id="2a917e70-eeb9-4fb0-b7a6-d05acc29ac80" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+    "key": "DORANEW",
+    "name": "Doraemon valid name",
+    "projectTypeKey": "nobita",
+    "projectTemplateKey": "com.atlassian.jira-core-project-templates:jira-core-project-management",
+    "description": "Project Sample Type is Nobita",
+    "lead": "admin",
+    "url": "http://atlassian.com",
+    "assigneeType": "PROJECT_LEAD",
+    "avatarId": 10200,
+    "permissionScheme": 10000
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/project</con:originalUri>
+            <con:assertion type="JsonPath Match" id="49bc5ddf-0c43-48a0-b44a-58403b0edcec" name="Match content of [projectType]">
+              <con:configuration>
+                <path>$['errors']['projectType']</path>
+                <content>An invalid project type was specified. Make sure the project type is available in your Jira instance. Please talk to your Jira administrator if you need more help.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="ed047954-7571-4fdf-9d75-b8c5829dc468" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_010 - User is not able to create a project with invalid lead" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Create project with invalid lead" id="74531001-e76c-404c-8882-d2dd4fcef1b8">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/project" methodName="Create project" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Create project with invalid lead" id="2a917e70-eeb9-4fb0-b7a6-d05acc29ac80" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+    "key": "DORANEW",
+    "name": "Doraemon valid name",
+    "projectTypeKey": "business",
+    "projectTemplateKey": "com.atlassian.jira-core-project-templates:jira-core-project-management",
+    "description": "Project Sample Type is Business",
+    "lead": "invalidLead",
+    "url": "http://atlassian.com",
+    "assigneeType": "PROJECT_LEAD",
+    "avatarId": 10200,
+    "permissionScheme": 10000
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/project</con:originalUri>
+            <con:assertion type="JsonPath Match" id="064a4f18-32b3-4e4e-bdff-dd6af1a23ed8" name="Match content of [projectLead]">
+              <con:configuration>
+                <path>$['errors']['projectLead']</path>
+                <content>You must specify a valid project lead.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties>
+      <con:property>
+        <con:name>SProjectName</con:name>
+        <con:value>DORA Software Test 3C0CG</con:value>
+      </con:property>
+      <con:property>
+        <con:name>SProjectKey</con:name>
+        <con:value>DORS3C0CG</con:value>
+      </con:property>
+      <con:property>
+        <con:name>BProjectName</con:name>
+        <con:value>DORA Business Test 3C0CG</con:value>
+      </con:property>
+      <con:property>
+        <con:name>BProjectKey</con:name>
+        <con:value>DORB3C0CG</con:value>
+      </con:property>
+    </con:properties>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:testSuite id="fec880a8-b894-4eda-a36c-a8914b1f8237" name="Suite - Add Comment" authProfile="Inherit From Parent">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="5c4d93f0-6edb-4e3f-b675-f5a3d6b54779" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_011 - Add Comment On Valid Owner Ticket" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="8350632f-c781-4a57-9e7b-00ada79089d8">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>This is comment from Doreamon</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>AP-4</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="add comment" id="41d50bf1-fc24-4be8-9bcf-357d7bedf11a">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment" methodName="add comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="add comment" id="39b02abc-2244-42aa-8486-98b0982ae6ca" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-4/comment</con:originalUri>
+            <con:assertion type="JsonPath Match" id="01e247d2-958b-44b8-b057-0431151b8f07" name="Match content of [body]">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#comment_text}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="414fe096-c585-4766-b441-9e844e8bf943" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="issueIdOrKey" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>issueIdOrKey</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>77fa436e-1d07-4109-912a-ae92897ef6ab</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>41d50bf1-fc24-4be8-9bcf-357d7bedf11a</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="7947fb0a-9acd-4d8d-93c9-5a77b21f4ac5" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_012 - Add Comment On Invalid Ticket" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="3cca2e79-3a56-48e2-b076-19858e3507bf">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>This is comment from Doreamon</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>Invalid</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="add comment" id="8822e858-34b0-4808-9c07-813a27f5b655">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment" methodName="add comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="add comment" id="39b02abc-2244-42aa-8486-98b0982ae6ca" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/Invalid/comment</con:originalUri>
+            <con:assertion type="JsonPath Match" id="a419d03f-4b77-4c3d-bdc7-81f74dd8200f" name="Match content of [0]">
+              <con:configuration>
+                <path>$['errorMessages'][0]</path>
+                <content>Issue does not exist or you do not have permission to see it.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="issueIdOrKey" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>issueIdOrKey</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>f298eaca-6017-4fdd-823c-3126b6639077</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>8822e858-34b0-4808-9c07-813a27f5b655</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="45b07a5c-0a53-46df-8e45-6bf9152614cd" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_013 - Try Adding Empty Comment" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="19e302db-f029-4e34-b4a9-2aef08dc034c">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value/>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>AP-5</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="add comment" id="2c58403b-04fa-485c-bea9-00fd7b0e681e">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment" methodName="add comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="add comment" id="39b02abc-2244-42aa-8486-98b0982ae6ca" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-5/comment</con:originalUri>
+            <con:assertion type="JsonPath Match" id="7e056868-c21a-4d2e-a3fe-a77bf2b0da33" name="Match content of [comment]">
+              <con:configuration>
+                <path>$['errors']['comment']</path>
+                <content>Comment body can not be empty!</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="issueIdOrKey" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>issueIdOrKey</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>a08f762c-7d10-4d8c-b24d-7ef896948506</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>2c58403b-04fa-485c-bea9-00fd7b0e681e</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="31ff5df0-0224-4ced-9b81-57dc87375230" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_014 - Add Comment On Valid Non-Owner Ticket" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="1b7ab6c5-d50d-4afc-b3f7-c32d55e741c9">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>This is comment from Doreamon</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>AP-7</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="add comment" id="24a4767c-f148-46cb-b65c-7e8a75897d1f">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment" methodName="add comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="add comment" id="39b02abc-2244-42aa-8486-98b0982ae6ca" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-7/comment</con:originalUri>
+            <con:assertion type="JsonPath Match" id="2391da1c-7d23-4047-a09c-991779328a1e" name="Match content of [body]">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#comment_text}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="df600bb3-171d-46ea-8ddb-9bce7da84a08" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="issueIdOrKey" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>issueIdOrKey</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>addf6b78-3c9e-4853-91e0-9eef1979610b</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>24a4767c-f148-46cb-b65c-7e8a75897d1f</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="10f3352d-8b15-4e1e-87af-da787fcf8701" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_015 - Add Comment With Special Characters" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="53dea4c9-fbee-466d-b4d2-0df90eb3d8a1">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>@#$%^</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>AP-4</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="add comment" id="63a04f54-8f25-4e7f-a6bb-9c2fcdf60601">
+        <con:settings/>
+        <con:config service="Jira TrungTran" methodName="add comment" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="add comment" id="a3977458-d396-4453-b6e8-183185b3e384" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-4/comment</con:originalUri>
+            <con:assertion type="JsonPath Match" id="69ca705f-535f-44f9-9561-306b4512ecf7" name="Match content of [body]">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#comment_text}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="2383c405-afdb-408d-80f4-544e38d12c4d" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="issueIdOrKey" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>25e32126-48ba-44bf-8e64-daac1d662743</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>63a04f54-8f25-4e7f-a6bb-9c2fcdf60601</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties>
+      <con:property>
+        <con:name>suite property</con:name>
+        <con:value/>
+      </con:property>
+    </con:properties>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:testSuite id="14eb78db-9dee-43af-a926-441efd35ce43" name="Suite - Update Comment" authProfile="Inherit From Parent">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="85cff6ba-b38d-4868-a0d9-91622b121555" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_016 - Update With Valid Comment" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="282cce4b-2fbd-4831-9730-2b221dbaeff1">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Doreamon add this comment</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>AP-4</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment</con:name>
+              <con:value>Doreamon update this comment</con:value>
+            </con:property>
+            <con:property>
+              <con:name>comment_id</con:name>
+              <con:value>10029</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="add comment" id="bb90cdd7-ed58-4f1f-bb31-3e27e6d06a66">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment" methodName="add comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="add comment" id="39b02abc-2244-42aa-8486-98b0982ae6ca" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/SOAP-1/comment</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="issueIdOrKey" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>issueIdOrKey</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Transfer - Ticket ID" id="5eab99a2-a09f-4180-ad79-4c5e611f4d11">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ticket_id</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>add comment</con:sourceStep>
+            <con:sourcePath>$['id']}</con:sourcePath>
+            <con:targetType>comment_id</con:targetType>
+            <con:targetStep>Data</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="update comment" id="67efc44d-9877-4036-adf6-fba7458a1e78">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment/{id}" methodName="update comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="update comment" id="978e6e8e-00ce-4a58-9352-2f1768abc2f3" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#updated_comment}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-4/comment/10013</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="issueIdOrKey" value="${Data#ticket_id}"/>
+              <con:entry key="id" value="${Data#comment_id}"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Update Comment Successfully" id="4f6f20cb-1fde-47be-aa07-effdfab8c783">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>6522d756-497b-4435-9185-4d4c472914b7</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>bb90cdd7-ed58-4f1f-bb31-3e27e6d06a66</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="f26b8528-d860-45a7-be18-46944af92d2b">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>05857d95-7bfa-466a-b20d-45eaebd321a9</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>67efc44d-9877-4036-adf6-fba7458a1e78</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="d1bddd1e-9fc1-4494-b19b-8a222568e6a0">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#updated_comment}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>80919113-876d-457c-96c6-74c47f8a125f</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="7b1a452a-fae1-4cba-a728-08897c457f02" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_017 - Update With Emply Comment" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="327b8e9a-35fb-4188-bb08-56e9e01a9d71">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Doreamon add this comment</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>AP-5</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment</con:name>
+              <con:value/>
+            </con:property>
+            <con:property>
+              <con:name>comment_id</con:name>
+              <con:value>10030</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="add comment" id="cca5e066-82ff-4a1e-8e3d-f082017c6ded">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment" methodName="add comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="add comment" id="39b02abc-2244-42aa-8486-98b0982ae6ca" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-5/comment</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="issueIdOrKey" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>issueIdOrKey</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Transfer - Ticket ID" id="29792ff0-894a-4be3-9824-5906372140d6">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ticket_id</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>add comment</con:sourceStep>
+            <con:sourcePath>$['id']}</con:sourcePath>
+            <con:targetType>comment_id</con:targetType>
+            <con:targetStep>Data</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="update comment" id="b800e4a5-f531-40b5-8355-be4a1e1213ab">
+        <con:settings/>
+        <con:config service="Jira TrungTran" methodName="update comment" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment/{id}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="update comment" id="788016e8-ec98-440f-8cf7-1c367b235c77" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#updated_comment}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-5/comment/10015</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="issueIdOrKey" value="${Data#ticket_id}"/>
+              <con:entry key="id" value="${Data#comment_id}"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Update Comment Un-Successfully" id="2e82a17c-f064-45c8-b1ed-f51a0ae092a5">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>9e474f78-a1fe-444a-b844-e0947a40e3af</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>cca5e066-82ff-4a1e-8e3d-f082017c6ded</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="98fb7349-0cb5-43f5-a709-7c5c4b5f06f8">
+              <con:settings/>
+              <con:configuration>
+                <codes>400</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>abf551cf-fe40-4d67-a912-fde17f102639</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>b800e4a5-f531-40b5-8355-be4a1e1213ab</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="9efb8853-d846-48a5-a0a5-c0605aa9260a">
+              <con:configuration>
+                <path>$['errors']['comment']</path>
+                <content>Comment body can not be empty!</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>3db2c8a7-179f-486c-be19-13308b73d9f8</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="9e315b2b-1e28-473d-86c0-05e7d921acf3" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_018 - Update Comment Twice" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="bf266d21-a769-4ed5-a579-3496e8e9972f">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Doreamon add this comment</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>AP-6</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment</con:name>
+              <con:value>Doreamon update this comment first time</con:value>
+            </con:property>
+            <con:property>
+              <con:name>comment_id</con:name>
+              <con:value>10031</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment_2</con:name>
+              <con:value>Doreamon update this comment 2nd time</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="add comment" id="e0f55916-9ca7-4625-b801-bee772071097">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment" methodName="add comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="add comment" id="39b02abc-2244-42aa-8486-98b0982ae6ca" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-6/comment</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="issueIdOrKey" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>issueIdOrKey</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Transfer - Ticket ID" id="2d0408ca-b121-4975-a542-5776750e81ab">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ticket_id</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>add comment</con:sourceStep>
+            <con:sourcePath>$['id']}</con:sourcePath>
+            <con:targetType>comment_id</con:targetType>
+            <con:targetStep>Data</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="update comment 1st time" id="1b2d2786-669a-4128-bf19-3d71c4d2726f">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment/{id}" methodName="update comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="update comment 1st time" id="978e6e8e-00ce-4a58-9352-2f1768abc2f3" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#updated_comment}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-6/comment/10016</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="issueIdOrKey" value="${Data#ticket_id}"/>
+              <con:entry key="id" value="${Data#comment_id}"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="update comment 2nd time" id="de9ddec5-30c5-4760-bfb3-b145861a561b">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment/{id}" methodName="update comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="update comment 2nd time" id="978e6e8e-00ce-4a58-9352-2f1768abc2f3" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#updated_comment_2}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-6/comment/10016</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="issueIdOrKey" value="${Data#ticket_id}"/>
+              <con:entry key="id" value="${Data#comment_id}"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Update Comment Successfully" id="50023e71-6513-423a-9124-d51c124ad64f">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>c0ca133a-0bef-4cac-91db-0de899c64949</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>e0f55916-9ca7-4625-b801-bee772071097</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="3d75f86f-92f0-4f5d-a834-b3fef5a3345c">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>97152b9b-f05c-47b8-beb9-3bbf9a81dec5</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>de9ddec5-30c5-4760-bfb3-b145861a561b</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="124633db-5961-4496-a228-24c2d572073c">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#updated_comment_2}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>ae9bb7d7-907a-4cb8-8ef0-798abc2f60dc</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>c4be437e-d115-4ee6-bfbf-5cb57926b5b5</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>de9ddec5-30c5-4760-bfb3-b145861a561b</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="41c7bbc0-6e63-4b68-8346-cc8dc7b65454" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_019 - Update Comment With Invalid Comment ID" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="bf1d41a0-5d59-482b-bd60-55314b6fdd60">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Nobita add this comment</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>AP-7</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment</con:name>
+              <con:value>Chaien danh Nobita sml</con:value>
+            </con:property>
+            <con:property>
+              <con:name>comment_id</con:name>
+              <con:value>Invalid</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="add comment" id="11323a80-1704-4051-bd30-61ab153861a5">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment" methodName="add comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="add comment" id="39b02abc-2244-42aa-8486-98b0982ae6ca" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-7/comment</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="issueIdOrKey" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>issueIdOrKey</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="update comment" id="91254244-855c-4002-b77e-8a65b36e8a70">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment/{id}" methodName="update comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="update comment" id="978e6e8e-00ce-4a58-9352-2f1768abc2f3" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#updated_comment}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-7/comment/Invalid</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="issueIdOrKey" value="${Data#ticket_id}"/>
+              <con:entry key="id" value="${Data#comment_id}"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Update Comment Un-Successfully" id="1cc8fb8c-f855-4d47-962c-ee93ca872675">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>df0ccce9-8f60-47f5-98e7-a59a7951fa66</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>11323a80-1704-4051-bd30-61ab153861a5</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="892ce8fe-6003-498e-9590-abfd3cc3009c">
+              <con:settings/>
+              <con:configuration>
+                <codes>404</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>92bdc322-6ef5-42b3-b217-e034ce5ca55e</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>91254244-855c-4002-b77e-8a65b36e8a70</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="5a14f398-12a9-42f0-85b2-4add28afff1b">
+              <con:configuration>
+                <path>$['errorMessages'][0]</path>
+                <content>Can not find a comment for the id: Invalid.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>f1be1339-780f-40b2-a4cc-84168f3a37db</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="571a46c8-dbe1-44d8-8320-4597599e49eb" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_020 - Update Comment In Non-Owner Ticket" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="4cf9dc44-de9d-4e75-8e56-70fb23f9494b">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>comment_text</con:name>
+              <con:value>Zixuka va Nobita la doi ban than</con:value>
+            </con:property>
+            <con:property>
+              <con:name>ticket_id</con:name>
+              <con:value>AP-8</con:value>
+            </con:property>
+            <con:property>
+              <con:name>updated_comment</con:name>
+              <con:value>Zixuka thich Dexuki</con:value>
+            </con:property>
+            <con:property>
+              <con:name>comment_id</con:name>
+              <con:value>10033</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="add comment" id="a95faefb-c981-4512-8821-4ac098cc53a2">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment" methodName="add comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="add comment" id="39b02abc-2244-42aa-8486-98b0982ae6ca" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#comment_text}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-8/comment</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="issueIdOrKey" value="${Data#ticket_id}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>issueIdOrKey</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="Transfer - Ticket ID" id="bde9b7c0-7ef8-4e63-9ec2-2c761532b650">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>ticket_id</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>add comment</con:sourceStep>
+            <con:sourcePath>$['id']}</con:sourcePath>
+            <con:targetType>comment_id</con:targetType>
+            <con:targetStep>Data</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:targetTransferType>JSONPATH</con:targetTransferType>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="update comment" id="0808c69c-de84-47e6-bb75-868509cb1956">
+        <con:settings/>
+        <con:config service="Jira TrungTran" resourcePath="/rest/api/2/issue/{issueIdOrKey}/comment/{id}" methodName="update comment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="update comment" id="978e6e8e-00ce-4a58-9352-2f1768abc2f3" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+	"body": "${Data#updated_comment}"
+}</con:request>
+            <con:originalUri>https://janjungapi.atlassian.net/rest/api/2/issue/AP-8/comment/10019</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="issueIdOrKey" value="${Data#ticket_id}"/>
+              <con:entry key="id" value="${Data#comment_id}"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Update Comment Successfully" id="62e582cc-e510-48f8-83e5-5d79c4208c82">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>41a1c9d7-bc6b-4ccc-a941-291e38758e10</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>a95faefb-c981-4512-8821-4ac098cc53a2</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="e3757884-cd6a-4a3b-8d64-b12c4b1fc51a">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>52a8fd3c-aa03-4f3f-9bb8-eda0b02c5c5a</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>0808c69c-de84-47e6-bb75-868509cb1956</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="b5edc49a-4b98-4010-9e26-585260f52d7a">
+              <con:configuration>
+                <path>$['body']</path>
+                <content>${Data#updated_comment}</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>12c9bd07-66ec-4e8a-908c-ff0c81072770</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:testSuite id="a0e66a56-759c-4c37-a313-d72b4e1e7307" name="Suite - Search JQL" authProfile="Inherit From Parent">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="d8c48edf-46d4-4f21-84bb-4300ed1040f4" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_021 - Search With Issue Type" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="8e934e81-b3c0-46a5-be2d-de0a3bcfbf86">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>jql</con:name>
+              <con:value>project = AP AND issuetype = Task</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Search With Status" id="da823661-6f12-43ce-a571-8ab7ce73b302">
+        <con:settings/>
+        <con:config service="Jira TrungTran" methodName="Method 1" resourcePath="/rest/api/2/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Search With Status" id="9856cd28-da88-40c4-a9ad-ff7e9618d8fa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+    "jql": "${Data#jql}",
+    "startAt": 0,
+    "maxResults": 15,
+    "fields": [
+        "summary",
+        "status",
+        "assignee"
+    ]
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/search</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Search Successfully" id="b9b9bf7c-7fbf-495f-ab86-6decbf64cb84">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>fef8b0fe-c6e4-42df-b945-3cb7ca4ad0fe</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>da823661-6f12-43ce-a571-8ab7ce73b302</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="afa08159-3cb4-49a7-acdb-7ba1c49bd512">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>a4d9c471-f588-453d-b8cf-6bf286b9f0f2</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>da823661-6f12-43ce-a571-8ab7ce73b302</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="49828276-0cd7-4a46-9a0e-aef9101c8f1a">
+              <con:configuration>
+                <path>$['issues'][0]['fields']['summary']</path>
+                <content>AP task *</content>
+                <allowWildcards>true</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>b81796dc-5331-4b4b-9eef-9aa18661e076</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="d6c731ed-21aa-49a4-85fe-09f8c7c9dca4" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_022 - Search With Wrong Field" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="a8c2c91c-4e20-4bf2-b441-ded6eac4d18d">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>jql</con:name>
+              <con:value>project=AP and reporterer in (admin)</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Search With Wrong Field" id="a276002f-61ed-4994-9e6c-0c4a698d926f">
+        <con:settings/>
+        <con:config service="Jira TrungTran" methodName="Method 1" resourcePath="/rest/api/2/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Search With Wrong Field" id="9856cd28-da88-40c4-a9ad-ff7e9618d8fa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{\r
+   "jql" : "${Data#jql}",\r
+   "startAt" : 0,\r
+   "maxResults" : 15,\r
+   "fields" : [\r
+      "summary",\r
+      "status",\r
+      "assignee"\r
+   ]\r
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/search</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Search Un-Successfully" id="3f3431c6-d7fa-4183-aa3b-d1bf7814d537">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>a632b494-f578-4d8a-8320-aa01f7aed70a</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>a276002f-61ed-4994-9e6c-0c4a698d926f</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="bf5b3e51-58a9-40de-b22f-5850ea1073d3">
+              <con:settings/>
+              <con:configuration>
+                <codes>400</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>e65fcfe7-f21e-44fc-ae5c-07c7f6e5fce3</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>a276002f-61ed-4994-9e6c-0c4a698d926f</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="18f5c799-1aaf-4f63-bc1d-59ebe4b4371d">
+              <con:configuration>
+                <path>$['errorMessages'][0]</path>
+                <content>Field 'reporterer' does not exist or you do not have permission to view it.</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>277a4ce3-724e-4c3c-90ee-6bb68c429f97</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="cb7fb9d2-fa3f-42ff-a5fd-18fc55e5a6d3" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_023 - Search With Wrong Syntax" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="fd2c46a5-c3ef-4bba-83e9-91b42879bb92">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>jql</con:name>
+              <con:value>project AP and reporterer in (admin)</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Search With Wrong Syntax" id="d05253e1-0ee7-48a2-aa1d-4d3d0d2e4b82">
+        <con:settings/>
+        <con:config service="Jira TrungTran" methodName="Method 1" resourcePath="/rest/api/2/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Search With Wrong Syntax" id="9856cd28-da88-40c4-a9ad-ff7e9618d8fa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+    "jql": "${Data#jql}",
+    "startAt": 0,
+    "maxResults": 15,
+    "fields": [
+        "summary",
+        "status",
+        "assignee"
+    ]
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/search</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Search Un-Successfully" id="a55941e6-ded7-454d-9e43-d8f57b018a45">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>c1f9bb6d-a235-41f2-a1f8-db23aa428ecb</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>d05253e1-0ee7-48a2-aa1d-4d3d0d2e4b82</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="914ac8d4-0b7e-4b9a-9b37-70251572ea7c">
+              <con:settings/>
+              <con:configuration>
+                <codes>400</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>9e620a64-2baa-40f6-a40c-831c979740c7</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>d05253e1-0ee7-48a2-aa1d-4d3d0d2e4b82</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="5315c1f5-3b42-42f3-bcd5-1f02eba3ed7a">
+              <con:configuration>
+                <path>$['errorMessages'][0]</path>
+                <content>Error in the JQL Query: Expecting operator but got 'AP'. The valid operators are '=', '!=', '&lt;', '>', '&lt;=', '>=', '~', '!~', 'IN', 'NOT IN', 'IS' and 'IS NOT'. (line 1, character 9)</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>1e9acde3-2d8d-44cd-8f1e-9c2666905080</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="53dc4da3-7c58-4825-9ff0-10c6079377b9" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_024 - Search With Assignee" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="3305a1b4-7158-4f28-8c97-2b47820b3d3c">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>jql</con:name>
+              <con:value>project = AP AND assignee in (hdkani)</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Search With Assignee" id="6171e5f1-99df-49d0-b6cc-2c2ffc847a4a">
+        <con:settings/>
+        <con:config service="Jira TrungTran" methodName="Method 1" resourcePath="/rest/api/2/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Search With Assignee" id="9856cd28-da88-40c4-a9ad-ff7e9618d8fa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+    "jql": "${Data#jql}",
+    "startAt": 0,
+    "maxResults": 15,
+    "fields": [
+        "summary",
+        "status",
+        "assignee"
+    ]
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/search</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Search Successfully" id="845002b7-3c79-4ce0-bbd3-81d2bc046fc4">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>4931a8bc-a280-45d9-9707-d2323e3d5a5d</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>6171e5f1-99df-49d0-b6cc-2c2ffc847a4a</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="95e8bb4e-4b53-40f7-a6ae-7911c8cb7034">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>19461a16-6faf-4714-af4e-893a181e22cb</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>6171e5f1-99df-49d0-b6cc-2c2ffc847a4a</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="99760dd5-d307-4605-949b-8243b4396d35">
+              <con:configuration>
+                <path>$['issues'][0]['fields']['assignee']['name']</path>
+                <content>hdkani</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>9398b610-ad91-4eb7-ac03-19ad51117ebe</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:testCase id="2af45b21-9365-423f-a40c-9ea67fd49425" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="APITT_025 - Search With Multi-Field" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Data" id="3fca46ab-62a0-4ae4-9cd1-6740741bdda1">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>jql</con:name>
+              <con:value>project = AP AND issuetype = Task AND status = \"To Do\" AND assignee in (hdkani) AND reporter in (hdkani)</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Step 1: Search With Assignee" id="c376d76d-f342-4f27-86f0-f8ae9552decf">
+        <con:settings/>
+        <con:config service="Jira TrungTran" methodName="Method 1" resourcePath="/rest/api/2/search" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Step 1: Search With Assignee" id="9856cd28-da88-40c4-a9ad-ff7e9618d8fa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://janjungapi.atlassian.net</con:endpoint>
+            <con:request>{
+    "jql": "${Data#jql}",
+    "startAt": 0,
+    "maxResults": 15,
+    "fields": [
+        "summary",
+        "status",
+        "assignee"
+    ]
+}</con:request>
+            <con:originalUri>https://phivo.atlassian.net/rest/api/2/search</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="assertionteststep" name="Assert - Search Successfully" id="960d7ed8-8eb5-4724-91c3-68431244ebfc">
+        <con:settings/>
+        <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:entry>
+            <con:id>0b773b25-d01d-449b-b7f6-27502e5f5961</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>c376d76d-f342-4f27-86f0-f8ae9552decf</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="386f5364-25a1-40bd-befa-f780b7e8b8d2">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>8528d274-feab-4f8d-bcf0-09febba95868</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>c376d76d-f342-4f27-86f0-f8ae9552decf</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="db78e455-b233-4c01-8a48-fdbbe17a549c">
+              <con:configuration>
+                <path>$['issues'][0]['fields']['summary']</path>
+                <content>AP task *</content>
+                <allowWildcards>true</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+          <con:entry>
+            <con:id>4bbc5bc0-9654-42e8-abce-91373b2b7d87</con:id>
+            <con:isGroup>false</con:isGroup>
+            <con:sourceId>c376d76d-f342-4f27-86f0-f8ae9552decf</con:sourceId>
+            <con:propertyName>Response</con:propertyName>
+            <con:assertion type="JsonPath Match" name="JSONPath Match" id="d745ae75-0ee7-4995-a3cc-0486c968c981">
+              <con:configuration>
+                <path>$['issues'][0]['fields']['assignee']['name']</path>
+                <content>hdkani</content>
+                <allowWildcards>true</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+          </con:entry>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>b00b4a8d-b420-4336-bb1b-8176ad23a620</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+    <con:parameters/>
+  </con:reporting>
+  <con:reporting/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// def token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// def token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// def headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository>
+    <con:basicAuthEntry>
+      <con:name>home</con:name>
+      <con:type>Basic</con:type>
+      <con:username>trung.tran.pts001@gmail.com</con:username>
+      <con:password>XJdTaDXBH9j2b2w7pd5m1633</con:password>
+      <con:preemptive>true</con:preemptive>
+    </con:basicAuthEntry>
+  </con:authRepository>
+  <con:tags/>
+</con:soapui-project>
